@@ -20,35 +20,83 @@ Full adder is a digital circuit used to calculate the sum of three binary bits. 
 
 Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
 
+
+
+### Figure -01 HALF ADDER 
  ![image](https://user-images.githubusercontent.com/36288975/163552156-a13e5a56-c638-4110-97d9-8896907c8d25.png)
 
-#### Figure -01 HALF ADDER 
 
 
+###  Figure -02 FULL ADDER 
 ![image](https://user-images.githubusercontent.com/36288975/163552057-b3547877-6d07-45b4-b7e0-bcfebfad9e1d.png)
-
-#### Figure -02 FULL ADDER 
 
 ### Procedure
 
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
+### Program:
+
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+
+Developed by: Shriram R
+
+RegisterNumber:  212221240053
+
+
+~~~
+HALF ADDER
+
+module Adder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule 
+~~~
+~~~
+FULL ADDER
+
+module FullAdder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = ((a^b)^c);
+assign carry = ((a&b)|(b&c)|(c&a));
+endmodule
+~~~
 
 ### Output:
-### RTL
-### TIMING DIAGRAM
+### Half Adder
+### Logic symbol:
+![](logicsymbol1.png)
+
+### Logic Gate:
+![](logicgate1.png)
+
+### Truth table:
+![](truthtable1.png)
+
+### Timing diagram:
+![](timing1.jpeg)
+
+### Full adder:
+
+![](logicsymbo2.png)
+### Logic symbol:
+![](logicsymbol2.png)
 
 
-### TRUTH TABLE 
+### Logic Gate:
+![](logicgate2.png)
+
+
+### Truth table:
+![](truthtable2.png)
+
+
+### Timing diagram:
+![](timing2.jpeg)
+
 
 ### Result:
+Thus, a half adder and full adder circuit is designed to verify its truth table in Quartus using Verilog programming.
